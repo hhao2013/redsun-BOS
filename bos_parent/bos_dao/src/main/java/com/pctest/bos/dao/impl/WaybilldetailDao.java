@@ -30,6 +30,9 @@ public class WaybilldetailDao extends BaseDao<Waybilldetail> implements IWaybill
 			if(null != waybilldetail1.getInfo() && waybilldetail1.getInfo().trim().length()>0){
 				dc.add(Restrictions.like("info", waybilldetail1.getInfo(), MatchMode.ANYWHERE));
 			}
+			if(null != waybilldetail1.getSn()){
+				dc.add(Restrictions.eq("sn", waybilldetail1.getSn()));
+			}
 
 		}
 		return dc;
